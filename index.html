@@ -1,171 +1,234 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Nils Blank</title>
-  
-  <meta name="author" content="Nils Blank">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127891</text></svg>">
-</head>
+  <meta name="author" content="Nils Blank">
+  <meta name="description" content="Nils Blank — PhD student at KIT's Intuitive Robots Lab, researching foundation models, imitation learning, and human-robot interaction.">
+  <title>Nils Blank</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #252a32;
+      --muted: #606874;
+      --link: #1768ae;
+      --line: #e5e8ec;
+      --highlight: #fff4e8;
+    }
 
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; text-underline-offset: 4px; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--link);
+      outline-offset: 5px;
+      border-radius: 3px;
+    }
+    img { display: block; width: 100%; height: auto; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.15; letter-spacing: -0.04em; font-weight: 650; }
+    h2 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -0.025em; font-weight: 650; }
+    strong { font-weight: 650; }
+    .page { max-width: 960px; margin: 0 auto; padding: 72px 32px 28px; }
+    .skip-link { position: absolute; top: 8px; left: 12px; transform: translateY(-160%); background: white; padding: 8px 12px; }
+    .skip-link:focus { transform: translateY(0); }
+    .profile { display: grid; grid-template-columns: minmax(0, 1fr) 208px; gap: 52px; align-items: center; }
+    .bio { margin-top: 22px; }
+    .portrait { border-radius: 14px; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-size: 0.9375rem; }
+    .social-links a { padding: 4px 0; }
+    .research { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .research p { margin-top: 12px; }
+    .publications { margin-top: 42px; }
+    .section-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+    .section-heading > a { font-size: 0.875rem; }
+    .paper {
+      display: grid;
+      grid-template-columns: 204px minmax(0, 1fr);
+      align-items: center;
+      gap: 26px;
+      padding: 26px 22px;
+      margin-bottom: 12px;
+    }
+    .paper + .paper:not(.featured) { border-top: 1px solid var(--line); }
+    .paper.featured { background: var(--highlight); }
+    .thumbnail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      overflow: hidden;
+    }
+    .thumbnail img { height: 100%; object-fit: contain; }
+    .paper h3 { margin: 6px 0 9px; font-size: 1.125rem; line-height: 1.4; letter-spacing: -0.015em; font-weight: 650; }
+    .paper h3 a { color: var(--ink); }
+    .paper h3 a:hover { color: var(--link); }
+    .venue { font-size: 0.8125rem; font-weight: 650; color: var(--link); letter-spacing: 0.025em; }
+    .venue span { color: var(--muted); font-weight: 400; letter-spacing: 0; }
+    .authors { color: var(--muted); font-size: 0.875rem; line-height: 1.65; }
+    .authors strong { color: var(--ink); }
+    .authors a { color: inherit; }
+    .award {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #77410b;
+      background: #ffe3bf;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+    }
+    .summary { margin-top: 12px; font-size: 0.9375rem; line-height: 1.65; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-size: 0.875rem; font-weight: 600; }
+    .paper-links a { padding: 4px 0; }
+    footer { margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8125rem; }
+
+    @media (max-width: 720px) {
+      .page { padding: 40px 24px 24px; }
+      .profile { grid-template-columns: minmax(0, 1fr) 150px; gap: 26px; align-items: start; }
+      .paper { grid-template-columns: 160px minmax(0, 1fr); gap: 20px; padding: 22px 18px; }
+    }
+    @media (max-width: 560px) {
+      .page { padding: 28px 18px 24px; }
+      .profile { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .profile > a { grid-row: 1; width: 136px; }
+      h1 { font-size: 2.25rem; }
+      .bio { margin-top: 18px; }
+      .research { margin-top: 32px; padding-top: 26px; }
+      .publications { margin-top: 32px; }
+      .paper { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 20px 16px; }
+      .thumbnail { width: 100%; max-width: 340px; justify-self: center; aspect-ratio: 16 / 9; }
+      .social-links { gap: 6px 20px; }
+      .social-links a, .paper-links a { min-height: 44px; display: inline-flex; align-items: center; }
+    }
+    @media print {
+      .page { max-width: none; padding: 0; }
+      .paper { break-inside: avoid; }
+      .skip-link { display: none; }
+    }
+  </style>
+</head>
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Nils Blank</name>
-              </p>
-              <p>I am a PhD student in the <a href="https://irl.anthropomatik.kit.edu/">Intuitive Robots Lab</a> (IRL) at the Karlsruhe Institute of Technology (KIT), Germany.
+  <a class="skip-link" href="#publications">Skip to publications</a>
+  <main class="page">
+    <header class="profile">
+      <div>
+        <h1>Nils Blank</h1>
+        <p class="bio">I am a PhD student in the <a href="https://irl.anthropomatik.kit.edu/">Intuitive Robots Lab</a> (IRL) at the Karlsruhe Institute of Technology (KIT), Germany.
                 My research focuses on Imitation Learning and Foundation Models for Human-Robot-Interaction. I am supervised by <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a>.
-              	I obtained my Master's Degree in Computer Science at the KIT.
+                I obtained my Master's Degree in Computer Science at the KIT.
                 During my studies I interned at SAP SE and IONOS.
               </p>
+        <nav class="social-links" aria-label="Contact and profiles">
+          <a href="mailto:nilsblank1998@gmail.com">Email</a>
+          <a href="https://scholar.google.de/citations?user=DUd7J0YAAAAJ">Google Scholar</a>
+          <a href="https://github.com/nilsblank/">GitHub</a>
+          <a href="https://www.linkedin.com/in/nils-blank-0a2752200/">LinkedIn</a>
+        </nav>
+      </div>
+      <a href="images/Nils.jpg" aria-label="View portrait of Nils Blank">
+        <img class="portrait" src="images/Nils.jpg" alt="Nils Blank" fetchpriority="high">
+      </a>
+    </header>
 
-              <p style="text-align:center">
-                <a href="mailto:nilsblank1998@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://scholar.google.de/citations?user=DUd7J0YAAAAJ">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/nilsblank/">Github</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/nils-blank-0a2752200/">LinkedIn</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/Nils.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/Nils.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
+    <section class="research" aria-labelledby="research-title">
+      <h2 id="research-title">Research</h2>
+      <p>
                 My research focuses on Foundation Models and their applications in Robotics. In particular, I explore how we can employ Foundation models
 		robustly and reliably in challenging robotic scenarios. Furthermore, my research focuses on goal driven explainability and how we can leverage foundation models for improved human-robot interaction.
               </p>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
+    </section>
 
-                          <!-- <tr> -->
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <div style="display: flex;">
-                  <div style="flex: 0 0 25%; max-width: 25%;">
-                    <!-- <img src='images/beast_tokenizer.png' style="width: 100%; max-width: 100%;"> -->
-                    <img src="images/SIR.png" style="width: 100%; max-width: 100%;">
-                    
-                  </div>
-                  <div style="flex: 0 0 75%; max-width: 75%; padding-left: 20px;">
-                    <a href="https://arxiv.org/abs/2506.06072">
-                      <papertitle>SIR: Structured Image Representations for Explainable Robot Learning</papertitle>
-                    </a>
-                    <br>
-                    Paul Mattes, Jan Schwab
-, Jens Oliver Bosch, Maximilian Xiling Li, Nils Blank, Minh-Trung Tang,  
-                    <a href="https://alr.anthropomatik.kit.edu/21_65.php">Rudolf Lioutikov</a> <br>
-                    <br>
-                    CVPR 2025, Poster
-                    <br>
-                    <a href="">Project Page</a>
-                    /
-                    <a href="">Code</a>
-                    /
-                    <a href="">arXiv</a>
-                    <p></p>
-                    <p>
-We introduce SIR, a novel approach for learning robot policies with explicit, interpretable structure. Instead of relying on opaque visual embeddings, our method constructs a fully connected scene graph from 2D or 3D image features and learns to sparsify it end-to-end, producing a minimal, task-relevant subgraph used for action generation. This design makes policies intrinsically explainable. Experiments on RoboCasa show that our sparse graph policies outperform image-based baselines (19.5% vs. 14.81% success rate) and are significantly more robust to visual distractors. Furthermore, analyzing the learned subgraphs enables introspection, revealing dataset biases such as spurious correlations and positional biases.                    </p>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            
-            <tr>
+    <section class="publications" id="publications" aria-labelledby="publications-title">
+      <div class="section-heading">
+        <h2 id="publications-title">Publications</h2>
+        <a href="https://scholar.google.de/citations?user=DUd7J0YAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a>
+      </div>
 
-                          <!-- <tr> -->
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <div style="display: flex;">
-                  <div style="flex: 0 0 25%; max-width: 25%;">
-                    <!-- <img src='images/beast_tokenizer.png' style="width: 100%; max-width: 100%;"> -->
-                    <img src="images/beast_tokenizer.png" style="width: 100%; max-width: 100%;">
-                    <img src="images/sweep.gif" style="width: 100%; max-width: 100%;">
-                  </div>
-                  <div style="flex: 0 0 75%; max-width: 75%; padding-left: 20px;">
-                    <a href="https://arxiv.org/abs/2506.06072">
-                      <papertitle>BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning</papertitle>
-                    </a>
-                    <br>
-                    Hongyi Zhou,
-                    Weiran Liao, Xi Huang, Yucheng Tang, Fabian Otto, Xiaogang Jia, Xinkai Jiang, Simon Hilber, Ge Li, Qian Wang, Ömer Erdinç Yağmurlu, Nils Blank, Moritz Reuss
-                    <a href="https://alr.anthropomatik.kit.edu/21_65.php">Rudolf Lioutikov</a> <br>
-                    <br>
-                    NeurIPS 2025, Poster
-                    <br>
-                    <a href="https://intuitive-robots.github.io/beast_website/">Project Page</a>
-                    /
-                    <a href="https://github.com/intuitive-robots/beast_calvin">Code</a>
-                    /
-                    <a href="https://arxiv.org/abs/2506.06072">arXiv</a>
-                    <p></p>
-                    <p>
-                   We present the B-spline Encoded Action Sequence Tokenizer (BEAST), a novel action tokenizer that encodes action sequences into compact discrete or continuous 
-                   tokens using B-splines. In contrast to existing action tokenizers based on vector quantization or byte pair encoding, BEAST requires no separate tokenizer 
-                   training and consistently produces tokens of uniform length, enabling fast action sequence generation via parallel decoding. 
-                   Leveraging our B-spline formulation, BEAST inherently ensures generating smooth trajectories without discontinuities between adjacent segments.
-                    </p>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <div style="display: flex;">
-                  <div style="flex: 0 0 25%; max-width: 25%;">
-                    <img src='images/LUPUS_Overview_Figure.png' style="width: 100%; max-width: 100%;">
-                  </div>
-                  <div style="flex: 0 0 75%; max-width: 75%; padding-left: 20px;">
-                    <a href="https://openreview.net/pdf?id=Q70XYvUk52">
-                      <papertitle>Scaling Robot Policy Learning via Zero-Shot Labeling with Foundation Models</papertitle>
-                    </a>
-                    <br>
-                    <strong>Nils Blank</strong>,
-                    Moritz Reuss,
-                    Marcel Rühle,
-                    Ömer Erdinç Yağmurlu,
-                    Fabian Wenzel,
-                    <a href="https://www.oiermees.com/">Oier Mees</a>, <br>
-                    <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a> <br>
-                    <br>
-                    CoRL 2024
-                    <br>
-                    <a href="https://openreview.net/pdf?id=EdVNB2kHv1">Paper Link</a>
-                    <p></p>
-                    <p>
-                      We introduce a novel approach to automatically label uncurated, long-horizon robot teleoperation data at scale in a zero-shot manner without any human intervention. 
-                      We utilize a combination of pre-trained vision-language foundation models to detect objects in a scene, propose possible tasks, segment tasks from large datasets of unlabelled interaction data and then train language-conditioned policies on the relabeled datasets. 
-                      Our initial experiments show that our method enables training language-conditioned policies on unlabeled and unstructured datasets that match ones trained with oracle human annotations.
-                    </p>
-                  </div>
-                </div>
-              </td>
-            </tr>
+      <!-- Add the "featured" class to highlight a publication. -->
+      <article class="paper featured" aria-labelledby="sparc-title">
+        <a class="thumbnail" href="https://intuitive-robots.github.io/sparc-labeling/" aria-label="SPARC project page">
+          <img src="images/sparc_teaser.png" alt="Overview of SPARC's spatial annotation pipeline" loading="lazy" decoding="async">
+        </a>
+        <div>
+          <p class="venue">CoRL 2026</p>
+          <h3 id="sparc-title"><a href="https://intuitive-robots.github.io/sparc-labeling/">SPARC: Reliable Spatial Annotations from Robot Demonstrations at Scale</a></h3>
+          <p class="authors"><strong>Nils Blank</strong>, Paul Mattes, Maximilian Xiling Li, Jakub Suliga, Thomas Roth, Moritz Reuss, Pankhuri Vanjani, <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a></p>
+          <p class="award"><strong>Best Paper Award</strong> · Lab2Production Workshop at RSS 2026</p>
+          <p class="summary">SPARC turns robot demonstrations into spatial annotations with reliability scores, enabling control over label quality without human review. It retains three times more samples at high precision on IA-Bench and improves spatial grounding and robot manipulation.</p>
+          <nav class="paper-links" aria-label="SPARC resources">
+            <a href="https://intuitive-robots.github.io/sparc-labeling/">Project page</a>
+            <a href="https://arxiv.org/abs/2606.13497">arXiv</a>
+          </nav>
+        </div>
+      </article>
 
+      <article class="paper" aria-labelledby="sir-title">
+        <a class="thumbnail" href="https://openaccess.thecvf.com/content/CVPR2026/html/Mattes_SIR_Structured_Image_Representations_for_Explainable_Robot_Learning_CVPR_2026_paper.html" aria-label="Read the SIR paper">
+          <img src="images/SIR.png" alt="Structured scene graph representation used by SIR" loading="lazy" decoding="async">
+        </a>
+        <div>
+          <p class="venue">CVPR 2026</p>
+          <h3 id="sir-title"><a href="https://openaccess.thecvf.com/content/CVPR2026/html/Mattes_SIR_Structured_Image_Representations_for_Explainable_Robot_Learning_CVPR_2026_paper.html">SIR: Structured Image Representations for Explainable Robot Learning</a></h3>
+          <p class="authors">Paul Mattes, Jan Schwab, Jens Bosch, Maximilian Xiling Li, <strong>Nils Blank</strong>, Minh-Trung Tang, Moritz Haberland, <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a></p>
+          <p class="summary">SIR learns sparse, task-relevant scene graphs that make robot policies interpretable. On RoboCasa, it improves success from 14.81% to 19.5% while making policies more robust to distractors and exposing dataset biases.</p>
+          <nav class="paper-links" aria-label="SIR resources">
+            <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Mattes_SIR_Structured_Image_Representations_for_Explainable_Robot_Learning_CVPR_2026_paper.html">Paper</a>
+            <a href="https://github.com/intuitive-robots/SIR_Model">Code</a>
+            <a href="https://arxiv.org/abs/2606.30101">arXiv</a>
+          </nav>
+        </div>
+      </article>
 
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-  <tr>
-      <td style="padding:0px; vertical-align: middle;">
-          <br>
-          <p style="text-align:right;font-size:small;">
-              The website is based on the code from <a href="https://github.com/jonbarron/jonbarron_website">source code</a>!
-          </p>
-      </td>
-  </tr>
-</tbody></table>
+      <article class="paper" aria-labelledby="beast-title">
+        <a class="thumbnail" href="https://intuitive-robots.github.io/beast_website/" aria-label="BEAST project page">
+          <img src="images/beast_tokenizer.png" alt="BEAST tokenizer for B-spline action sequences" loading="lazy" decoding="async">
+        </a>
+        <div>
+          <p class="venue">NeurIPS 2025</p>
+          <h3 id="beast-title"><a href="https://intuitive-robots.github.io/beast_website/">BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning</a></h3>
+          <p class="authors">Hongyi Zhou, Weiran Liao, Xi Huang, Yucheng Tang, Fabian Otto, Xiaogang Jia, Xinkai Jiang, Simon Hilber, Ge Li, Qian Wang, Ömer Erdinç Yağmurlu, <strong>Nils Blank</strong>, Moritz Reuss, <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a></p>
+          <p class="summary">BEAST encodes robot action sequences into compact B-spline tokens without separate tokenizer training. Uniform-length tokens support fast parallel decoding while producing smooth, continuous trajectories.</p>
+          <nav class="paper-links" aria-label="BEAST resources">
+            <a href="https://intuitive-robots.github.io/beast_website/">Project page</a>
+            <a href="https://github.com/intuitive-robots/beast_calvin">Code</a>
+            <a href="https://arxiv.org/abs/2506.06072">arXiv</a>
+          </nav>
+        </div>
+      </article>
+
+      <article class="paper featured" aria-labelledby="nils-title">
+        <a class="thumbnail" href="https://robottasklabeling.github.io/" aria-label="Robot task labeling project page">
+          <img src="images/LUPUS_Overview_Figure.png" alt="Foundation-model pipeline for labeling robot demonstrations" loading="lazy" decoding="async">
+        </a>
+        <div>
+          <p class="venue">CoRL 2024</p>
+          <h3 id="nils-title"><a href="https://arxiv.org/abs/2410.17772">Scaling Robot Policy Learning via Zero-Shot Labeling with Foundation Models</a></h3>
+          <p class="authors"><strong>Nils Blank</strong>, Moritz Reuss, Marcel Rühle, Ömer Erdinç Yağmurlu, Fabian Wenzel, <a href="https://www.oiermees.com/">Oier Mees</a>, <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a></p>
+          <p class="summary">NILS combines pretrained foundation models to segment and label unstructured robot demonstrations with natural language, without human intervention. We annotate over 115,000 trajectories from more than 430 hours of robot data.</p>
+          <nav class="paper-links" aria-label="Zero-shot labeling resources">
+            <a href="https://robottasklabeling.github.io/">Project page</a>
+            <a href="https://arxiv.org/abs/2410.17772">arXiv</a>
+          </nav>
+        </div>
+      </article>
+    </section>
+
+    <footer>Website inspired by <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's academic website</a>.</footer>
+  </main>
 </body>
-
 </html>
