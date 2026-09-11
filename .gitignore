@@ -1,0 +1,5 @@
+.DS_Store
+.jj/
+.env
+.env.*
+!.env.example
