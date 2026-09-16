@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="Nils Blank is a PhD researcher at KIT’s Intuitive Robots Lab, working on foundation models for robotics, spatial grounding, and learning from robot demonstrations." name="description"/>
     <meta content="Nils Blank" name="author"/>
-    <meta content="#141522" name="theme-color"/>
+    <meta content="#fcfcfd" name="theme-color"/>
     <link href="https://nilsblank.github.io/" rel="canonical"/>
     <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
     <link href="apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -26,26 +26,27 @@
     <meta content="https://nilsblank.github.io/images/Nils.jpg" name="twitter:image"/>
     <meta content="Portrait of Nils Blank" name="twitter:image:alt"/>
     <title>Nils Blank — Foundation Models for Robotics</title>
-    <link as="font" crossorigin="" href="fonts/manrope-semibold.ttf" rel="preload" type="font/ttf"/>
-    <link href="stylesheet_new.css" rel="stylesheet"/>
+    <link href="stylesheet.css" rel="stylesheet"/>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="page-width hero-inner">
+    <header class="site-header page-width">
       <nav aria-label="Main navigation" class="main-nav">
         <a href="#about">About</a>
-        <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="data/Nils-Blank-CV.pdf" target="_blank" rel="noopener">CV</a>
         <a href="https://scholar.google.de/citations?user=DUd7J0YAAAAJ">Scholar</a>
       </nav>
+    </header>
+    <main class="page-width" id="main">
+      <section aria-labelledby="name" class="intro" id="about">
+        <!-- PROFILE — Remove the portrait figure to use a text-only introduction. -->
         <div class="intro-top">
           <figure class="portrait">
             <img alt="Nils Blank" decoding="async" fetchpriority="high" height="128" loading="eager" sizes="(max-width: 520px) 80px, 128px" src="images/optimized/portrait-200.webp" srcset="images/optimized/portrait-200.webp 200w, images/optimized/portrait-400.webp 400w" width="128"/>
           </figure>
           <div class="identity">
-            <h1 id="name"><span class="name-lettering">Nils Blank</span></h1>
+            <h1 id="name">Nils Blank</h1>
             <p class="intro-subtitle"><svg aria-hidden="true" class="degree-icon" viewBox="0 0 64 64"><path d="M4 25 32 11l28 14-28 14L4 25Z"/><path d="M16 33v12c0 5 32 5 32 0V33"/><path d="M53 29v18"/><circle cx="53" cy="50" r="3"/></svg> PhD Researcher @ IRL-KIT</p>
             <nav aria-label="Contact and research profiles" class="social-links">
               <a href="mailto:nilsblank1998@gmail.com">Email</a>
@@ -56,26 +57,11 @@
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <main class="page-width" id="main">
-      <section aria-labelledby="name" class="intro" id="about">
-        <!-- PROFILE — Remove the portrait figure to use a text-only introduction. -->
         <div class="intro-bio">
           <p>I’m a PhD researcher at KIT’s <a href="https://www.irl.iar.kit.edu/">Intuitive Robots Lab</a>, advised by <a href="http://rudolf.intuitive-robots.net/">Rudolf Lioutikov</a>.</p>
           <p>My research focuses on foundation models for robotics, spatial grounding, and learning from robot demonstrations. I study how vision-language models can annotate and curate robot datasets and provide supervision for robot learning.</p>
           <p>I received my master’s degree in Computer Science from KIT. During my studies, I interned at SAP SE and IONOS.</p>
         </div>
-      </section>
-      <section aria-labelledby="news-title" class="news-section" id="news">
-        <h2 id="news-title">News</h2>
-        <dl class="news-list">
-          <div><dt><time datetime="2026-09">09/2026</time></dt><dd><a href="#sparc">SPARC</a> accepted to CoRL 2026.</dd></div>
-          <div><dt><time datetime="2026-07">07/2026</time></dt><dd>SPARC received the Best Paper Award at the Lab2Production Workshop at RSS.</dd></div>
-          <div><dt><time datetime="2026-06">06/2026</time></dt><dd>Announcing our RSS 2026 workshop: <a href="https://robot-fm-safety.github.io/">Trustworthy Embodied Foundation Models: Safety by Design versus Safety by Practice</a>, which I am co-organizing.</dd></div>
-          <div><dt><time datetime="2026-06">06/2026</time></dt><dd><a href="#sir">SIR</a> published at CVPR 2026.</dd></div>
-          <div><dt><time datetime="2025-11">11/2025</time></dt><dd>We are hosting the first <a href="https://www.irl.iar.kit.edu/245.php">Foundation Model Bootcamp</a> at KIT.</dd></div>
-        </dl>
       </section>
       <section aria-labelledby="publications-title" class="publications-section" id="publications">
         <div class="section-heading">
@@ -84,10 +70,7 @@
         <!-- PUBLICATION: SPARC — Copy this article to add a paper; update its id and title id. -->
         <article aria-labelledby="sparc-title" class="publication is-selected" id="sparc">
           <div class="publication-visual">
-            <video class="sparc-video" autoplay controls muted loop playsinline preload="metadata" poster="images/sparc-video-poster.jpg" width="960" height="540" aria-label="SPARC annotation demonstration: clearing a plate, with three camera views">
-              <source src="videos/sparc-clear-plate.mp4" type="video/mp4"/>
-              <a href="videos/sparc-clear-plate.mp4">Watch the SPARC annotation demonstration</a>
-            </video>
+            <a aria-label="View full-size SPARC research figure" class="publication-image" href="images/sparc_teaser.png"><img alt="SPARC pipeline: robot demonstrations become spatial annotations with reliability scores, supporting spatial reasoning and robot manipulation." decoding="async" height="574" loading="lazy" sizes="(max-width: 520px) calc(100vw - 48px), (max-width: 760px) 180px, 220px" src="images/optimized/sparc-1200.webp" srcset="images/optimized/sparc-360.webp 360w, images/optimized/sparc-600.webp 600w, images/optimized/sparc-900.webp 900w, images/optimized/sparc-1200.webp 1200w" width="1200"/></a>
           </div>
           <div class="publication-content">
             <h3 id="sparc-title"><a href="https://intuitive-robots.github.io/sparc-labeling/">SPARC: Reliable Spatial Annotations from Robot Demonstrations at Scale</a></h3>
@@ -106,7 +89,6 @@
             </div>
           </div>
         </article>
-
         <!-- PUBLICATION: SIR — Copy this article to add a paper; update its id and title id. -->
         <article aria-labelledby="sir-title" class="publication" id="sir">
           <div class="publication-visual">
@@ -148,7 +130,6 @@
             </div>
           </div>
         </article>
-
         <!-- PUBLICATION: NILS — Copy this article to add a paper; update its id and title id. -->
         <article aria-labelledby="nils-title" class="publication is-selected" id="nils">
           <div class="publication-visual">
@@ -170,21 +151,6 @@
             </div>
           </div>
         </article>
-      </section>
-      <section aria-labelledby="outside-title" class="outside-research">
-        <div>
-          <h2 id="outside-title">Outside research</h2>
-          <p>I make music in my free time, feel free to have a listen!</p>
-          <p class="music-link"><a href="https://soundcloud.com/nilsblank" target="_blank" rel="noopener">🔊 ▶︎•၊၊||၊|။|||||။၊|။• 🔊</a></p>
-        </div>
-        <!-- Original ringed-planet illustration. -->
-        <svg aria-hidden="true" class="space-sketch" viewBox="0 0 200 120" fill="none">
-          <circle cx="105" cy="61" r="27" fill="var(--accent-subtle)" stroke="currentColor" stroke-width="1.2"/>
-          <path d="M79 55c10 4 28 5 45 0M81 70c12 4 25 4 44-1" stroke="currentColor" opacity=".25"/>
-          <ellipse cx="105" cy="61" rx="58" ry="12" transform="rotate(-25 105 61)" stroke="currentColor" stroke-width="1.2"/>
-          <path d="m36 26 0 8m-4-4h8m121 54v8m-4-4h8M157 23v6m-3-3h6" stroke="currentColor" stroke-linecap="round"/>
-          <g fill="currentColor"><circle cx="55" cy="89" r="1.2"/><circle cx="138" cy="101" r="1"/><circle cx="76" cy="15" r="1"/><circle cx="176" cy="52" r="1.2"/></g>
-        </svg>
       </section>
     </main>
     <footer class="site-footer page-width">

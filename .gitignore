@@ -3,3 +3,6 @@
 .env
 .env.*
 !.env.example
+
+# Full-resolution source photo; the optimized website asset is tracked instead.
+PXL_20250820_004045423.NIGHT.JPG

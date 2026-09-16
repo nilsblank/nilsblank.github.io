@@ -53,7 +53,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--space-6); }
-body { margin: 0; background: var(--background); color: var(--text); font: var(--text-base)/1.75 var(--font-sans); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--background); color: var(--text); font: 1.125rem/1.7 var(--font-serif); -webkit-font-smoothing: antialiased; }
 ::selection { color: var(--text); background: var(--accent-subtle); }
 h1, h2, h3, p, figure { margin: 0; }
 h1, h2, h3 { text-wrap: pretty; }
@@ -69,7 +69,7 @@ strong { font-weight: 600; }
 .main-nav { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--space-5); }
 .main-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); color: var(--text-muted); }
 .main-nav a:hover { color: var(--accent); }
-.intro { margin-top: var(--space-5); padding: var(--space-6); border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
+.intro { margin-top: var(--space-5); padding-block: var(--space-5); }
 .intro-top { display: flex; align-items: center; gap: var(--space-6); }
 .identity { min-width: 0; }
 h1 { font-family: var(--font-serif); font-size: var(--text-name); font-weight: 500; line-height: 1.15; letter-spacing: -.035em; }
@@ -83,6 +83,15 @@ h1 { font-family: var(--font-serif); font-size: var(--text-name); font-weight: 5
 .intro-bio p + p { margin-top: var(--space-3); }
 .intro-bio a { text-decoration-color: color-mix(in srgb, var(--accent) 25%, transparent); }
 .intro-bio a:hover { text-decoration-color: currentColor; }
+.main-nav, .social-links, .intro-subtitle, .resource-links, .site-footer { font-family: var(--font-sans); }
+.news-section { margin-top: var(--space-6); }
+.news-list { margin: var(--space-3) 0 0; }
+.news-list > div { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-3); padding-block: .2rem; }
+.news-list dt { color: #000; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.news-list dd { margin: 0; }
+.outside-research { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--border); }
+.outside-research p { margin-top: var(--space-2); }
+.space-sketch { width: 160px; height: 96px; flex-shrink: 0; color: var(--accent); }
 .publications-section { margin-top: var(--space-7); }
 .section-heading { margin-bottom: var(--space-3); }
 h2 { font-family: var(--font-serif); font-size: var(--text-heading); font-weight: 500; line-height: 1.3; letter-spacing: -.02em; }
@@ -97,11 +106,11 @@ h2 { font-family: var(--font-serif); font-size: var(--text-heading); font-weight
 .publication h3 { font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 600; line-height: 1.3; letter-spacing: -.01em; }
 .publication h3 a { color: var(--text); }
 .publication h3 a:hover { color: var(--accent); }
-.authors { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.5; margin-top: var(--space-1); }
+.authors { font-size: .9375rem; color: var(--text-muted); line-height: 1.5; margin-top: var(--space-1); }
 .authors strong { color: var(--text); }
 .publication-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--text-xs); line-height: 1.5; color: var(--text-muted); margin-top: var(--space-1); }
 .selection-label { color: var(--accent); font-weight: 500; }
-.publication-description { font-size: var(--text-sm); line-height: 1.55; margin-top: var(--space-1); }
+.publication-description { font-size: 1rem; line-height: 1.55; margin-top: var(--space-1); }
 .award { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); color: var(--text-muted); font-size: var(--text-xs); line-height: 1.5; margin-top: var(--space-2); }
 .award-badge { display: inline-block; padding: var(--space-1) var(--space-2); color: var(--award-text); background: var(--award-background); border: 1px solid var(--award-border); border-radius: 3px; font-weight: 600; }
 .resource-links { display: flex; flex-wrap: wrap; gap: 0 var(--space-4); margin-top: var(--space-1); }
@@ -120,7 +129,9 @@ h2 { font-family: var(--font-serif); font-size: var(--text-heading); font-weight
 }
 @media (max-width: 520px) {
   .main-nav { justify-content: flex-start; gap: var(--space-4); }
-  .intro { padding: var(--space-4); }
+  .intro { padding-block: var(--space-4); }
+  .outside-research { gap: var(--space-3); }
+  .space-sketch { width: 90px; height: 70px; }
   .intro-top { gap: var(--space-4); align-items: start; flex-wrap: wrap; }
   .portrait img { width: 80px; height: 80px; }
   h1 { font-size: 2rem; }
@@ -148,4 +159,55 @@ h2 { font-family: var(--font-serif); font-size: var(--text-heading); font-weight
   .publication.is-selected::before { display: none; }
   .publication { break-inside: avoid; }
   a { color: inherit; }
+}
+
+.music-link { font-size: 1rem; color: var(--text-muted); }
+.milky-way { margin-top: var(--space-5); }
+.milky-way img { width: 100%; height: auto; border-radius: 3px; }
+.milky-way figcaption { margin-top: var(--space-2); color: var(--text-muted); font: .75rem/1.5 var(--font-sans); }
+@media (max-width: 520px) { body { font-size: 1.0625rem; } }
+
+/* Version 5: geometric name lettering and a personal night-sky photograph. */
+@font-face {
+  font-family: 'Manrope'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('fonts/manrope-semibold.ttf') format('truetype');
+}
+:root { --background: #f3f3f7; --text: #292b3b; --selection-background: #e5e6ef; }
+.site-header { padding: 0; position: relative; isolation: isolate; overflow: hidden; background: #141522; color: #fff; }
+.site-header::before { content: ''; position: absolute; z-index: -2; width: 1100px; height: 1100px; left: 52%; top: 50%; transform: translate(-50%, -50%) rotate(45deg); background: url('images/milky-way-personal.webp') 50% 50% / cover; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 70%); }
+.site-header::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(10,12,23,.92) 0%, rgba(10,12,23,.78) 38%, rgba(10,12,23,.34) 62%, rgba(10,12,23,.08) 100%); }
+.hero-inner { padding-block: 12px; }
+.site-header .intro-top { padding-block: 30px 24px; gap: 22px; }
+.site-header h1 { font-family: 'Manrope', var(--font-sans); font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 600; text-transform: uppercase; letter-spacing: .01em; line-height: 1.15; }
+.site-header .name-lettering { display: inline-block; transform: scaleY(.95); transform-origin: center; }
+.site-header .intro-subtitle { color: #e0e5f1; }
+.site-header a { color: #edf0f7; }
+.site-header a:hover { color: #fff; }
+.site-header :focus-visible { outline-color: #fff; }
+.site-header .portrait img { width: 213px; height: 260px; border-radius: 7px; border: 1px solid rgba(255,255,255,.25); object-position: center 35%; }
+.site-header .social-links { gap: .25rem 1.25rem; margin-top: .75rem; }
+.site-header .social-links a { font-size: 1rem; font-weight: 500; text-decoration-color: rgba(255,255,255,.55); }
+.sky-credit { text-align: right; font: .625rem/1.5 var(--font-sans); color: #d6dce9; }
+.intro { margin-top: var(--space-6); padding: 0; }
+.intro-bio { margin-top: 0; }
+.news-list > div { grid-template-columns: 5rem minmax(0,1fr); }
+.sparc-video { display: block; width: 100%; height: auto; border-radius: 3px; background: #0d1926; }
+.publication-description { font-size: .9375rem; }
+.authors { font-size: .875rem; }
+.space-sketch { width: 160px; height: 96px; }
+@media (max-width: 520px) {
+  .site-header .intro-top { flex-wrap: nowrap; gap: 12px; align-items: center; padding-block: 22px; }
+  .site-header h1 { font-size: clamp(1.65rem, 7vw, 2.2rem); letter-spacing: .01em; }
+  .site-header .portrait img { width: 130px; height: 166px; }
+  .site-header .main-nav { gap: 0 1rem; }
+  .site-header .intro-subtitle { font-size: .75rem; }
+  .site-header .social-links { gap: 0 .75rem; }
+  .news-list > div { grid-template-columns: 4.5rem minmax(0,1fr); gap: .5rem; }
+  .outside-research { flex-wrap: wrap; }
+  .space-sketch { width: 130px; height: 78px; margin-left: auto; }
+}
+@media print {
+  .site-header { display: block; background: none; color: #000; }
+  .site-header .main-nav, .sky-credit { display: none; }
+  .site-header a, .site-header .intro-subtitle { color: #000; }
 }
