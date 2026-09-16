@@ -86,7 +86,7 @@ h1 { font-family: var(--font-serif); font-size: var(--text-name); font-weight: 5
 .main-nav, .social-links, .intro-subtitle, .resource-links, .site-footer { font-family: var(--font-sans); }
 .news-section { margin-top: var(--space-6); }
 .news-list { margin: var(--space-3) 0 0; }
-.news-list > div { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-3); padding-block: .2rem; }
+.news-list > div { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-3); }
 .news-list dt { color: #000; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .news-list dd { margin: 0; }
 .outside-research { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--border); }
