@@ -62,7 +62,7 @@ Publication metadata, affiliation, advisor, experience, and award information we
 
 The root `index.html` is the website. GitHub Pages can serve it directly from the repository branch and `/ (root)` folder. `.nojekyll` tells GitHub Pages to serve the static files as-is. No custom Actions workflow or deployment service is needed.
 
-The canonical address is `https://nilsblank.github.io`. If it changes, update the metadata in `index.html` and `404.html`, plus `robots.txt` and `sitemap.xml`.
+The canonical address is `https://nilsblank.github.io`. If it changes, update the metadata (including the JSON-LD block) in `index.html` and `404.html`, plus `robots.txt` and `sitemap.xml`.
 
 The original `index.bk.html` and original image/data files are preserved.
 
