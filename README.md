@@ -54,7 +54,7 @@ This direct HTML workflow intentionally favors minimal tooling over automatic co
 
 To omit the portrait, remove `<figure class="portrait">`. The layout adapts without changing CSS.
 
-Add a CV link only after supplying your own PDF. `data/CV_Moritz_Reuss.pdf` belongs to someone else and is not linked. Awards are listed with the corresponding paper. Education and internship information is included in the bio.
+Awards are listed with the corresponding paper. Education and internship information is included in the bio.
 
 Publication metadata, affiliation, advisor, experience, and award information were carried over from the previous homepage. No new dates or service roles were invented.
 
@@ -64,7 +64,7 @@ The root `index.html` is the website. GitHub Pages can serve it directly from th
 
 The canonical address is `https://nilsblank.github.io`. If it changes, update the metadata (including the JSON-LD block) in `index.html` and `404.html`, plus `robots.txt` and `sitemap.xml`.
 
-The original `index.bk.html` and original image/data files are preserved.
+Leftovers from the template fork (another researcher's CV, bio and paper assets) and the old homepage copies were removed on 2026-10-06; they remain in git history.
 
 ## Accessibility and verification
 
